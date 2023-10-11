@@ -15,7 +15,6 @@ while True:
         os.system(f"sudo chown -R $USER:$USER /var/www/{url}")
         os.system(f"sudo chmod -R 755 /var/www/{url}")
         os.system(f"echo 'Привет, доменный сайт!' | sudo tee /var/www/{url}/index.html")
-        os.system(f"sudo nano /etc/apache2/sites-available/{url}.conf")
         apache_config = f"""
 <VirtualHost *:80>
     ServerAdmin admin@{url}
